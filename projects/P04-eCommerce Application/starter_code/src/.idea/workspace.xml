@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="db7d9412-825e-4ce1-a43a-843cb1f17f7b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/demo/model/persistence/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/example/demo/model/persistence/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/demo/model/requests/CreateUserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/example/demo/model/requests/CreateUserRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/demo/security/JWTAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/example/demo/security/JWTAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/demo/security/JWTAuthenticationVerficationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/example/demo/security/JWTAuthenticationVerficationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/demo/security/SecurityConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/example/demo/security/SecurityConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/demo/security/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/example/demo/security/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/java/com/example/demo/security/WebSecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/main/java/com/example/demo/security/WebSecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/example/demo/SareetaApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/example/demo/SareetaApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/example/demo/controllers/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/example/demo/controllers/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/example/demo/model/persistence/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/example/demo/model/persistence/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/classes/com/example/demo/model/requests/CreateUserRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/classes/com/example/demo/model/requests/CreateUserRequest.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="2KweM2pEi57HfKHI9Wq92W55s4I" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/javacourse/udacity/L4_project/hw/JDND/projects/P04-eCommerce Application/starter_code/src"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="db7d9412-825e-4ce1-a43a-843cb1f17f7b" name="Changes" comment="" />
+      <created>1674890020643</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1674890020643</updated>
+    </task>
+    <servers />
+  </component>
+</project>
