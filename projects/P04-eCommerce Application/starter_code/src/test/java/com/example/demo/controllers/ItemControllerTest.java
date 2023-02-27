@@ -35,14 +35,8 @@ public class ItemControllerTest {
         List<Item> inputItems = ItemControllerTest.getItems();
         when(itemRepository.findAll()).thenReturn(inputItems);
         final ResponseEntity<List<Item>> itemResult = itemController.getItems();
-        for(int i = 0; i < 2; i++){
-            assertEquals(200,itemResult.getStatusCodeValue());
-            List<Item> items =  itemResult.getBody();
-            assertEquals(inputItems.get(i).getId(),items.get(i).getId());
-            assertEquals(inputItems.get(i).getName(),items.get(i).getName());
-            assertEquals(inputItems.get(i).getPrice(),items.get(i).getPrice());
-            assertEquals(inputItems.get(i).getDescription(),items.get(i).getDescription());
-        }
+        assertEquals(200,itemResult.getStatusCodeValue());
+        assertArrayEquals(inputItems.toArray(new Item[0]), itemResult.getBody().toArray(new Item[0]));
     }
 
     @Test
