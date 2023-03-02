@@ -37,16 +37,16 @@ public class CartController {
 	
 	@PostMapping("/addToCart")
 	public ResponseEntity<Cart> addTocart(@RequestBody ModifyCartRequest request) {
-		log.info("request username",request.getUsername());
+		log.info("request username is {}",request.getUsername());
 		User user = userRepository.findByUsername(request.getUsername());
 		if(user == null) {
-			log.debug("found no user by username: {}", request.getUsername());
+			log.error("found no user by username: {}", request.getUsername());
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
-		log.info("request itemId",request.getItemId());
+		log.info("request itemId is {}",request.getItemId());
 		Optional<Item> item = itemRepository.findById(request.getItemId());
 		if(!item.isPresent()) {
-			log.debug("found no item by id: {}", request.getItemId());
+			log.error("found no item by id: {}", request.getItemId());
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
 		Cart cart = user.getCart();
@@ -61,16 +61,16 @@ public class CartController {
 	
 	@PostMapping("/removeFromCart")
 	public ResponseEntity<Cart> removeFromcart(@RequestBody ModifyCartRequest request) {
-		log.info("request username",request.getUsername());
+		log.info("request username is {}",request.getUsername());
 		User user = userRepository.findByUsername(request.getUsername());
 		if(user == null) {
-			log.debug("found no user by username: {}", request.getUsername());
+			log.error("found no user by username: {}", request.getUsername());
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
-		log.info("request itemId",request.getItemId());
+		log.info("request itemId is {}",request.getItemId());
 		Optional<Item> item = itemRepository.findById(request.getItemId());
 		if(!item.isPresent()) {
-			log.debug("found no item by id: {}", request.getItemId());
+			log.error("found no item by id: {}", request.getItemId());
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
 		Cart cart = user.getCart();
