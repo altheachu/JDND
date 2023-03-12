@@ -1,0 +1,1 @@
+source="ecommerce_log.txt" host="LAPTOP-JL38FPQ6" sourcetype="e_ccomerce log" "succeed" OR "fail"| top result| bucket _time span=1m

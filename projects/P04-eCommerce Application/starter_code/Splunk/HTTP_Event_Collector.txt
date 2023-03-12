@@ -1,0 +1,3 @@
+Hostname: LAPTOP-JL38FPQ6
+Port: 8088
+Token: 627e2fd3-f032-4487-923d-21cd952fe5ef
