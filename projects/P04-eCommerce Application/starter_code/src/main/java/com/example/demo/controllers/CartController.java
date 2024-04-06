@@ -36,24 +36,24 @@ public class CartController {
 	private ItemRepository itemRepository;
 	
 	@PostMapping("/addToCart")
-	public ResponseEntity<Cart> addTocart(@RequestBody ModifyCartRequest request) {
-		log.info("add to cart: request username is {}",request.getUsername());
-		User user = userRepository.findByUsername(request.getUsername());
+	public ResponseEntity<Cart> addTocart(@RequestBody ModifyCartRequest modifyCartRequest) {
+		log.info("add to cart: request username is {}",modifyCartRequest.getUsername());
+		User user = userRepository.findByUsername(modifyCartRequest.getUsername());
 		if(user == null) {
-			log.error("add to cart fail: found no user by username: {}", request.getUsername());
+			log.error("add to cart fail: found no user by username: {}", modifyCartRequest.getUsername());
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
-		log.info("add to cart: request itemId is {}",request.getItemId());
-		Optional<Item> item = itemRepository.findById(request.getItemId());
+		log.info("add to cart: request itemId is {}",modifyCartRequest.getItemId());
+		Optional<Item> item = itemRepository.findById(modifyCartRequest.getItemId());
 		if(!item.isPresent()) {
-			log.error("add to cart fail: found no item by id: {}", request.getItemId());
+			log.error("add to cart fail: found no item by id: {}", modifyCartRequest.getItemId());
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 		}
 		Cart cart = user.getCart();
 		if(cart==null){
 			log.error("add to cart fail: cart do not exist");
 		}
-		IntStream.range(0, request.getQuantity())
+		IntStream.range(0, modifyCartRequest.getQuantity())
 			.forEach(i -> cart.addItem(item.get()));
 		cartRepository.save(cart);
 		log.info("add to cart succeed");

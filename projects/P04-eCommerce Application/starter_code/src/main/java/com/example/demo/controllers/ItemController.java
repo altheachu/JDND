@@ -1,13 +1,15 @@
 package com.example.demo.controllers;
 
 import java.util.List;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
+import com.example.demo.exception.OperationAbsentItemsException;
+import com.example.demo.model.requests.BatchDeleteItemsRequest;
+import com.example.demo.utils.ExceptionResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.model.persistence.Item;
 import com.example.demo.model.persistence.repositories.ItemRepository;
@@ -36,5 +38,19 @@ public class ItemController {
 				: ResponseEntity.ok(items);
 			
 	}
-	
+
+	@DeleteMapping("/deleteByIds")
+	public ResponseEntity<Void> deleteItems(@RequestBody BatchDeleteItemsRequest request){
+		List<Long> existIds = itemRepository.findAll().stream().map(Item::getId).collect(Collectors.toList());
+		List<Long> ids = request.getIds();
+		List<Long> absentIds = ids.stream().filter(t->!existIds.contains(t)).collect(Collectors.toList());
+
+		if(!absentIds.isEmpty()){
+			throw new OperationAbsentItemsException(absentIds, "/api/item/deleteByIds");
+		}
+		ids.forEach(t->itemRepository.deleteById(t));
+		return ResponseEntity.noContent().build();
+	}
+
+
 }
